@@ -35,7 +35,9 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console": "off"
+      "no-console": "off",
+      "vue/no-unused-vars": "error",
+      "ignoreWhenBindingPresent": true
     },
     "parserOptions": {
       "parser": "babel-eslint"
