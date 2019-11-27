@@ -9,7 +9,7 @@
 
       <div class="field">
         <div class="column is-one-fifth">
-           <label class="label">Register</label>
+           <label class="label">Login</label>
           <input class="input is-primary" type="text" placeholder="Email" v-model="email">
         </div>
       </div>

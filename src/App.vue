@@ -8,6 +8,7 @@
 <script>
 
 import Nav from './components/Nav.vue'
+// import Registration from '@/components/Registration.vue'
 
 export default {
   name: 'app',

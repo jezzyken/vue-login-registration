@@ -1,9 +1,9 @@
 import Registration from './components/Registration.vue';
 import Login from './components/Login.vue';
-import HelloWorld from './components/HelloWorld.vue';
+import Main from './components/Main.vue';
 
 export default[
-    { path: '/', component: HelloWorld},
+    { path: '/', component: Main},
     { path: '/register', component: Registration},
     { path: '/login', component: Login}
 ]
