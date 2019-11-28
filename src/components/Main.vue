@@ -32,7 +32,9 @@
                   <th>{{user.last_name}}</th>
                   <th>
                     <div class="buttons">
-                      <button class="button is-primary" v-on:click="editUser">Edit</button>
+                       <router-link :to="'/update/' + user.id">
+                          <button class="button is-primary" v-on:click="editUser(user.id)">Edit</button>
+                       </router-link>
                       <button class="button is-danger" v-on:click="deleteUser">Delete</button>
                     </div>
                   </th>
@@ -48,7 +50,7 @@
 
 <script>
 import axios from 'axios'
-import qs from 'qs'
+// import qs from 'qs'
 // import Swal from 'sweetalert2'
 export default {
   name: 'Blogs',
@@ -58,7 +60,7 @@ export default {
     }
   },
   methods:{
-    editUser(){
+    editUser(id){
     //  Swal.fire({
     //     title: 'Updated User',
     //     text: "Do you want to update this User?",
@@ -74,7 +76,7 @@ export default {
     //   })
 
 
-      let url = 'http://192.168.254.200:81/api/users/15';
+      // let url = 'http://192.168.254.200:81/api/users/' + id;
 
 
         // let data = new FormData();
@@ -103,25 +105,32 @@ export default {
         // console.log(response);
 
 
-      axios({
-        method: 'put',
-        url: url,
-        data: qs.stringify({
-          email: 'value1',
-          password: 'value2',
-          first_name: 'value2',
-          last_name: 'value2'
-        }),
-        headers: {
-          'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-        }
-      }).then(response =>{
-        console.log(response);
-      })
+      // axios({
+      //   method: 'put',
+      //   url: url,
+      //   data: qs.stringify({
+      //     email: 'value1',
+      //     password: 'value2',
+      //     first_name: 'value2',
+      //     last_name: 'value2'
+      //   }),
+      //   headers: {
+      //     'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+      //   }
+      // }).then(response =>{
+      //   console.log(response);
+      // })
 
 
+      const url = 'http://192.168.254.200:81/api/users/' + id;
 
-
+      axios.get(url).then(response => {
+            console.log(response);
+            // this.users = response.data;
+      }).catch(error =>{
+          console.log(error);
+      });
+    
 
 
 
@@ -211,9 +220,12 @@ export default {
 
 
   },
+
   created(){
 
      const url = 'http://192.168.254.200:81/api/users/';
+
+    //  const url = 'http://kenchen.x10.bz/displayUser.php/?id=12';
 
       axios.get(url).then(response => {
             console.log(response);
