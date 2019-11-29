@@ -17,7 +17,7 @@
 <script>
 
 import axios from 'axios'
-import qs from 'qs'
+// import qs from 'qs'
     
 export default{
 
@@ -36,25 +36,29 @@ export default{
     methods:{
         update(){
 
-            this.email = document.getElementById('email');
+            // this.email = document.getElementById('email');
 
-             const url = 'http://192.168.254.200:81/api/users/' + this.id;
+            //  const url = 'http://192.168.254.200:81/api/users/' + this.id;
 
-            axios({
-                method: 'put',
-                url: url,
-                data: qs.stringify({
-                email: this.email.value,
-                password: 'value2',
-                first_name: 'value2',
-                last_name: 'value2'
-                }),
-                headers: {
-                'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-                }
-            }).then(response =>{
-                console.log(response);
-            })
+            // axios({
+            //     method: 'put',
+            //     url: url,
+            //     data: qs.stringify({
+            //     email: this.email.value,
+            //     password: 'value2',
+            //     first_name: 'value2',
+            //     last_name: 'value2'
+            //     }),
+            //     headers: {
+            //     'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+            //     }
+            // }).then(response =>{
+            //     console.log(response);
+            // })
+
+
+            alert(this.users.email);
+
 
 
         }

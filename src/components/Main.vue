@@ -21,12 +21,12 @@
                   <th>Last name</th> 
                   
                   <th>Action</th> 
-                </tr>
+                </tr> 
             </thead>
             <tbody id="blog-post" v-for="user in users" :key="user.id">
                 <tr>
                   <th>{{user.id}}</th>
-                  <th>{{user.email}}</th>
+                  <th><img src="https://wowsciencecamp.org/wp-content/uploads/2018/07/dummy-user-img-1-400x400_x_acf_cropped.png" width="30" height="30"> {{user.email}}</th>
                   <th>{{user.password}}</th>
                   <th>{{user.first_name}}</th>
                   <th>{{user.last_name}}</th>
@@ -35,7 +35,6 @@
                        <router-link :to="'/update/' + user.id">
                           <button class="button is-primary" v-on:click="editUser(user.id)">Edit</button>
                        </router-link>
-                      <button class="button is-danger" v-on:click="deleteUser">Delete</button>
                     </div>
                   </th>
                 </tr>

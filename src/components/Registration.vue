@@ -58,7 +58,7 @@ export default {
         first_name: "",
         last_name: ""
 
-    }
+    } 
   },
   methods:{
     register(){
@@ -75,7 +75,7 @@ export default {
       // axios.get(url, request).then(response => {
       //       console.log(response);
       // }).catch(error =>{
-      //     console.log(error);
+      //     console.log(error);http://192.168.254.200:81/api/users/'
       // });
 
        const url = 'http://192.168.254.200:81/api/users/';
